@@ -1,4 +1,7 @@
 import React, { useState } from 'react';
+import { LeftOutlined, RightOutlined } from '@ant-design/icons';
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import './Slider.css';
 
 const Slider = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -32,17 +35,25 @@ const Slider = () => {
   return (
     <div className="slider">
       <div className="slide-container">
-        <div className="slide">
-          <div className="slide-content">
-            <div className="slide-id">{slides[currentSlide].id}</div>
-            <img src={slides[currentSlide].image} alt={slides[currentSlide].heading} />
-            <h3>{slides[currentSlide].heading}</h3>
-          </div>
-        </div>
+        <TransitionGroup>
+          <CSSTransition
+            key={slides[currentSlide].id}
+            timeout={300}
+            classNames="fade"
+          >
+            <div className="slide">
+              <div className="slide-content">
+                <div className="slide-id">{slides[currentSlide].id}</div>
+                <img src={slides[currentSlide].image} alt={slides[currentSlide].heading} />
+                <h3>{slides[currentSlide].heading}</h3>
+              </div>
+            </div>
+          </CSSTransition>
+        </TransitionGroup>
       </div>
       <div className="navigation">
-        <button className="prev" onClick={prevSlide}>&#8249;</button>
-        <button className="next" onClick={nextSlide}>&#8250;</button>
+        <LeftOutlined className="prev" onClick={prevSlide} />
+        <RightOutlined className="next" onClick={nextSlide} />
       </div>
     </div>
   );
