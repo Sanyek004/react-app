@@ -19,10 +19,12 @@ const ProductCard = () => {
       onMouseLeave={handleMouseLeave}
     >
       <div className="product-image">
+      <div class="gradient-background">
         <img src="https://spaceaqua.ru/upload/resize_webp/iblock/d39/253_253_140cd750bba9870f18aada2478b24840a/ige1u96u2tvmcgi6qqf6cfry2rl9hg38.webp" alt="Oxidizer SCA19 SpaceAqua" />
+        </div>
+        </div>
         <div className="label new">Новинка</div>
         <div className={`product-image-overlay ${isHovered ? 'product-image-overlay--active' : ''}`} />
-      </div>
       <div className={`product-info ${isHovered ? 'product-info--hovered' : ''}`}>
         <h3 className="product-title">Oxidizer SCA19 SpaceAqua</h3>
         <p className="price">72 394 Р</p>
@@ -32,8 +34,8 @@ const ProductCard = () => {
           <button className="button favorite">❤</button>
           <button className="button compare">🔄</button>
         </div>
-      </div>
-    </div>
+      </div>    
+</div>
   );
 };
 
