@@ -1,47 +1,58 @@
 import React, { useState } from 'react';
 
-const gifs = [
+const slides = [
   {
-    url: 'https://c.tenor.com/EgkXGTk5iw4AAAAd/tenor.gif',
-    title: 'Title 1',
-    description: 'Description 1'
+    title: 'Компактные системы AquaSmart',
+    description: 'С французским клапаном распределения потоков воды',
+    mediaUrl: 'https://example.com/image1.jpg',
+    mediaType: 'image',
+    detailsUrl: 'https://example.com/details1'
   },
   {
-    url: 'https://c.tenor.com/ikwivN9cyroAAAAd/tenor.gif',
-    title: 'Title 2',
-    description: 'Description 2'
+    title: 'Бесплатный подбор оборудования', 
+    description: 'Подберем оборудование индивидуально для вашего дома, квартиры, дачи',
+    mediaUrl: 'https://example.com/image2.jpg',
+    mediaType: 'image',
+    detailsUrl: 'https://example.com/details2'
   },
   {
-    url: 'https://c.tenor.com/P4aQ7gPsYvgAAAAd/tenor.gif',
-    title: 'Title 3',
-    description: 'Description 3'
+    title: 'Активированный уголь SpaceCarbon',
+    description: 'Высокоэффективный коксовый уголь для очистки питьевой и технологической воды', 
+    mediaUrl: 'https://example.com/image3.jpg',
+    mediaType: 'image',
+    detailsUrl: 'https://example.com/details3'
   }
 ];
 
-const ImageWithDescription = () => {
+const HeaderSlider = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const handlePrevClick = () => {
-    setCurrentIndex((currentIndex - 1 + gifs.length) % gifs.length);
+    setCurrentIndex((currentIndex - 1 + slides.length) % slides.length);
   };
 
   const handleNextClick = () => {
-    setCurrentIndex((currentIndex + 1) % gifs.length);
+    setCurrentIndex((currentIndex + 1) % slides.length);
   };
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'row', margin: '20px' }}>
+    <div style={{ display: 'flex', margin: '20px' }}>
       <div style={{ flex: 1, marginRight: '20px' }}>
-        <h2>{gifs[currentIndex].title}</h2>
-        <p>{gifs[currentIndex].description}</p>
-        <button onClick={handlePrevClick}>Previous</button>
-        <button onClick={handleNextClick}>Next</button>
+        <h2>{slides[currentIndex].title}</h2>
+        <p>{slides[currentIndex].description}</p>
+        <div>
+          <a href={slides[currentIndex].detailsUrl}>Подробнее</a>
+        </div>
+        <div>
+          <button onClick={handlePrevClick}>Previous</button>
+          <button onClick={handleNextClick}>Next</button>
+        </div>
       </div>
-      <div style={{ width: '300px', height: '200px', overflow: 'hidden', marginLeft: '20px' }}>
-        <img src={gifs[currentIndex].url} alt="Gif" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+      <div style={{ width: '400px', height: '225px' }}>
+        <img src={slides[currentIndex].mediaUrl} alt="Slide" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
       </div>
     </div>
   );
 };
 
-export default ImageWithDescription;
+export default HeaderSlider;

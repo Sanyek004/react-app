@@ -81,7 +81,13 @@
   max-width: 200px;
   max-height: 250px;
   object-fit: contain;
+  /* transition: transform 0.5s ease; */
 }
+
+/* .card:hover img {
+  transform: scale(1.0); 
+} */
+
 
 
 .card h3 {
