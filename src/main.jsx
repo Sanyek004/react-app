@@ -22,6 +22,7 @@ import Gallery from "./components/Gallery/Gallery";
 import HeaderLogotext from "./components/HeaderLogotext/HeaderLogotext";
 import Partners from "./components/Partners/Partners";
 import About from "./components/About/About";
+import ProductCard from "./components/ProductCard/ProductCard";
 
 const store = configureStore({
   reducer: {
@@ -102,6 +103,14 @@ ReactDOM.createRoot(document.getElementById("root7")).render(
   <React.StrictMode>
     <Provider store={store}>
       <About />
+    </Provider>
+  </React.StrictMode>
+);
+
+ReactDOM.createRoot(document.getElementById("root8")).render(
+  <React.StrictMode>
+    <Provider store={store}>
+      <ProductCard />
     </Provider>
   </React.StrictMode>
 );
