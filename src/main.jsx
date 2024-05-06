@@ -23,6 +23,7 @@ import HeaderLogotext from "./components/HeaderLogotext/HeaderLogotext";
 import Partners from "./components/Partners/Partners";
 import About from "./components/About/About";
 import ProductCard from "./components/ProductCard/ProductCard";
+import WaterFiltrationSystem from "./components/WaterFiltrationSystem/WaterFiltrationSystem";
 
 const store = configureStore({
   reducer: {
@@ -111,6 +112,14 @@ ReactDOM.createRoot(document.getElementById("root8")).render(
   <React.StrictMode>
     <Provider store={store}>
       <ProductCard />
+    </Provider>
+  </React.StrictMode>
+);
+
+ReactDOM.createRoot(document.getElementById("root9")).render(
+  <React.StrictMode>
+    <Provider store={store}>
+      <WaterFiltrationSystem />
     </Provider>
   </React.StrictMode>
 );

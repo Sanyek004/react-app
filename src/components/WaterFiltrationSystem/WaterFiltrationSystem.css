@@ -1,0 +1,71 @@
+.water-filtration-system {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .text-container {
+    flex: 1;
+    margin-right: 20px;
+  }
+  
+  .text-container h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .text-container p {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+  
+  .text-container button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .image-container {
+    flex: 1;
+    position: relative;
+  }
+  
+  .image-container img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .social-icons {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px;
+  }
+  
+  .social-icon {
+    margin-right: 8px;
+    cursor: pointer;
+  }
+  
+  .twitter-icon {
+    position: absolute;
+    top: 400px;
+    left: 500px;
+  }
+  
+  .instagram-icon {
+    position: absolute;
+    top: 350px;
+    left: 500px;
+  }
+  
+  .facebook-icon {
+    position: absolute;
+    top: 300px;
+    left: 500px;
+  }
