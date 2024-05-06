@@ -59,9 +59,23 @@ button {
 }
 
 /* Стили основного контента */
-main {
-  padding: 40px 0;
-  background: radial-gradient(circle, #000000, #304255);
+main::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0) 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+h1 {
+  font-size: 36px;
+  color: #ffffff;
+  margin-bottom: 20px;
 }
 
 h1 {
