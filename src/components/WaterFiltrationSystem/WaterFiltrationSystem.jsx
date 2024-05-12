@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { CSSTransition } from 'react-transition-group';
 import { Avatar } from 'antd';
 import { PlusOutlined } from '@ant-design/icons';
 import './WaterFiltrationSystem.css';
@@ -32,37 +33,52 @@ const WaterFiltrationSystem = () => {
           className={`plus-icon plus-icon-1 ${showInfo === 1 ? 'active' : ''}`}
           onClick={() => handleIconClick(1)}
         >
-          <Avatar size={32} icon={<PlusOutlined />} />
-          {showInfo === 1 && (
-            <div className={`info-popup ${showInfo === 1 ? 'show' : ''}`} onMouseDown={closeInfoPopup}>
+       <Avatar size={32} icon={<PlusOutlined />} />
+          <CSSTransition
+            in={showInfo === 1}
+            timeout={10000}
+            classNames="info-popup"
+            unmountOnExit
+          >
+            <div className="info-popup" onMouseDown={closeInfoPopup}>
               <h3>Заголовок 1</h3>
               <p>Текст для иконки 1</p>
             </div>
-          )}
+          </CSSTransition>
         </div>
         <div
           className={`plus-icon plus-icon-2 ${showInfo === 2 ? 'active' : ''}`}
           onClick={() => handleIconClick(2)}
         >
           <Avatar size={32} icon={<PlusOutlined />} />
-          {showInfo === 2 && (
-            <div className={`info-popup ${showInfo === 2 ? 'show' : ''}`} onMouseDown={closeInfoPopup}>
+          <CSSTransition
+            in={showInfo === 2}
+            timeout={10000}
+            classNames="info-popup"
+            unmountOnExit
+          >
+            <div className="info-popup" onMouseDown={closeInfoPopup}>
               <h3>Заголовок 2</h3>
               <p>Текст для иконки 2</p>
             </div>
-          )}
+          </CSSTransition>
         </div>
         <div
           className={`plus-icon plus-icon-3 ${showInfo === 3 ? 'active' : ''}`}
           onClick={() => handleIconClick(3)}
         >
           <Avatar size={32} icon={<PlusOutlined />} />
-          {showInfo === 3 && (
-            <div className={`info-popup ${showInfo === 3 ? 'show' : ''}`} onMouseDown={closeInfoPopup}>
+          <CSSTransition
+            in={showInfo === 3}
+            timeout={10000}
+            classNames="info-popup"
+            unmountOnExit
+          >
+            <div className="info-popup" onMouseDown={closeInfoPopup}>
               <h3>Заголовок 3</h3>
               <p>Текст для иконки 3</p>
             </div>
-          )}
+          </CSSTransition>
         </div>
       </div>
     </div>
