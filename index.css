@@ -1,3 +1,35 @@
+@keyframes moveGradient {
+  0% {
+    transform: translate(-50%, -50%);
+  }
+  25% {
+    transform: translate(-50%, -60%);
+  }
+  50% {
+    transform: translate(-40%, -50%);
+  }
+  75% {
+    transform: translate(-50%, -40%);
+  }
+  100% {
+    transform: translate(-60%, -50%);
+  }
+}
+
+main::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0) 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  animation: moveGradient 5s infinite;
+}
+
 /* Стили для контейнера компонента */
 #root {
   height: 100vh; /* Установите высоту для полного заполнения экрана */
@@ -21,9 +53,9 @@ html {
     color: #fff; 
     font-family: 'Roboto Flex', Arial, 'Helvetica Neue', sans-serif; 
     font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 20px;
     background-color: #f7f7f7;
+    min-height: 100vh;
+    position: relative;
   }
   
   .glow {
@@ -42,6 +74,7 @@ html {
     color: #fff;
     padding: 1rem 0;
     background-color: rgb(27, 34, 45); 
+    position: relative;
   }
   
   .container {
@@ -157,8 +190,9 @@ html {
   main {
     padding: 2rem 0;
     background-color: rgb(27, 34, 45); 
+    position: relative;
   }
-  
+
   .categories {
     padding: 2rem 0;
   }
@@ -379,6 +413,7 @@ html {
   justify-content: space-between;
   align-items: flex-start;
   font-family: 'Arial', sans-serif;
+  position: relative;
 }
 
 .footer-section {
