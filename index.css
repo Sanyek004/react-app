@@ -55,7 +55,6 @@
     transform: translate(0, 0);
   }
 }
-
 main::before {
   content: '';
   position: absolute;
@@ -66,7 +65,12 @@ main::before {
   background: radial-gradient(circle, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0) 70%);
   border-radius: 50%;
   pointer-events: none;
-  animation: moveGradient 60s infinite linear;
+  animation: moveGradient 50s infinite linear;
+  animation-play-state: paused;
+}
+
+main.animate::before {
+  animation-play-state: running;
 }
 
 /* Стили для контейнера компонента */

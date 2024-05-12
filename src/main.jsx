@@ -33,6 +33,28 @@ const store = configureStore({
   },
 });
 
+document.addEventListener('DOMContentLoaded', function() {
+  const main = document.querySelector('main');
+  let animationTimeout;
+
+  function startAnimation() {
+    main.classList.add('animate');
+  }
+
+  function stopAnimation() {
+    clearTimeout(animationTimeout);
+    animationTimeout = setTimeout(function() {
+      main.classList.remove('animate');
+    }, 500); // Задержка перед паузой анимации (в миллисекундах)
+  }
+
+  document.addEventListener('wheel', startAnimation);
+  document.addEventListener('scroll', startAnimation);
+
+  document.addEventListener('wheel', stopAnimation);
+  document.addEventListener('scroll', stopAnimation);
+});
+
 /*
 export default function Todo2() {
   const [posts, setPosts] = useState([]);
