@@ -40,32 +40,31 @@
     height: auto;
   }
   
-  .social-icons {
-    position: absolute;
-    top: 0;
-    left: 0;
-    padding: 10px;
-  }
-  
-  .social-icon {
-    margin-right: 8px;
-    cursor: pointer;
-  }
-  
-  .twitter-icon {
-    position: absolute;
-    top: 400px;
-    left: 500px;
-  }
-  
-  .instagram-icon {
-    position: absolute;
-    top: 350px;
-    left: 500px;
-  }
-  
-  .facebook-icon {
-    position: absolute;
-    top: 300px;
-    left: 500px;
-  }
+  /* ... */
+
+.plus-icon {
+  position: absolute;
+  background-color: #fff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 32px;
+  height: 32px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.plus-icon-1 {
+  top: 74px;
+  left: 96px;
+}
+
+.plus-icon-2 {
+  top: 74px;
+  left: 210px;
+}
+
+.plus-icon-3 {
+  top: 74px;
+  left: 325px;
+}
