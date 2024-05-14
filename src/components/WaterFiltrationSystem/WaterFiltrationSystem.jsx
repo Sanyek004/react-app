@@ -18,71 +18,152 @@ const WaterFiltrationSystem = () => {
     setShowInfo(null);
   };
 
-  return (
-    <div className="water-filtration-system">
-      <div className="text-container">
-        <h1>Бесплатный подбор системы водоочистки</h1>
-        <p>
-          Мы готовы предложить комплектующие и готовые решения систем водоочистки для загородного дома, квартиры и производства.
-        </p>
-        <button type="button">Подобрать оборудование</button>
+  
+  const openPopup = (content) => {
+    setPopupContent(content);
+    setIsOpen(true);
+  };
+
+  const closePopup = () => {
+    setIsOpen(false);
+    setPopupContent('');
+  };
+
+//   return (
+//     <div className="water-filtration-system">
+//       <div className="text-container">
+//         <h1>Бесплатный подбор системы водоочистки</h1>
+//         <p>
+//           Мы готовы предложить комплектующие и готовые решения систем водоочистки для загородного дома, квартиры и производства.
+//         </p>
+//         <button type="button">Подобрать оборудование</button>
+//       </div>
+//       <div className="image-container">
+//         <img src="https://spaceaqua.ru/upload/medialibrary/6eb/sgc7obfse0ku87jp256gak6lmb2an6is.png" alt="Water Filtration System" />
+//         <div
+//           className={`plus-icon plus-icon-1 ${showInfo === 1 ? 'active' : ''}`}
+//           onClick={() => handleIconClick(1)}
+//         >
+//        <Avatar size={32} icon={<PlusOutlined />} />
+//           <CSSTransition
+//             in={showInfo === 1}
+//             timeout={10000}
+//             classNames="info-popup"
+//             unmountOnExit
+//           >
+//             <div className="info-popup" onMouseDown={closeInfoPopup}>
+//               <h3>Система аэрации</h3>
+//               <p>Насыщает воду кислородом, переводя растворённое железо в осадок и удаляет запах сероводорода</p>
+//             </div>
+//           </CSSTransition>
+//         </div>
+//         <div
+//           className={`plus-icon plus-icon-2 ${showInfo === 2 ? 'active' : ''}`}
+//           onClick={() => handleIconClick(2)}
+//         >
+//           <Avatar size={32} icon={<PlusOutlined />} />
+//           <CSSTransition
+//             in={showInfo === 2}
+//             timeout={10000}
+//             classNames="info-popup"
+//             unmountOnExit
+//           >
+//             <div className="info-popup" onMouseDown={closeInfoPopup}>
+//               <h3>Система обезжелезивания</h3>
+//               <p>Очищает от железа</p>
+//             </div>
+//           </CSSTransition>
+//         </div>
+//         <div
+//           className={`plus-icon plus-icon-3 ${showInfo === 3 ? 'active' : ''}`}
+//           onClick={() => handleIconClick(3)}
+//         >
+//           <Avatar size={32} icon={<PlusOutlined />} />
+//           <CSSTransition
+//             in={showInfo === 3}
+//             timeout={10000}
+//             classNames="info-popup"
+//             unmountOnExit
+//           >
+//             <div className="info-popup" onMouseDown={closeInfoPopup}>
+//               <h3>Заголовок 3</h3>
+//               <p>Текст для иконки 3</p>
+//             </div>
+//           </CSSTransition>
+//         </div>
+//       </div>
+//     </div>
+//   );
+// };
+
+return (
+  <div className="water-filtration-system">
+    <div className="text-container">
+      <h1>Бесплатный подбор системы водоочистки</h1>
+      <p>
+        Мы готовы предложить комплектующие и готовые решения систем водоочистки для загородного дома, квартиры и производства.
+      </p>
+      <button type="button">Подобрать оборудование</button>
+    </div>
+    <div className="image-container">
+      <img src="https://spaceaqua.ru/upload/medialibrary/6eb/sgc7obfse0ku87jp256gak6lmb2an6is.png" alt="Water Filtration System" />
+      
+      <div
+        className={`plus-icon plus-icon-1 ${showInfo === 1 ? 'active' : ''}`}
+        onClick={() => handleIconClick(1)}
+      >
+        <Avatar size={32} icon={<PlusOutlined />} />
+        <CSSTransition
+          in={showInfo === 1}
+          timeout={2000}
+          classNames="info-popup"
+          unmountOnExit
+        >
+          <div className="info-popup" onMouseDown={closeInfoPopup}>
+            <h3>Система аэрации</h3>
+            <p>Насыщает воду кислородом, переводя растворённое железо в осадок и удаляет запах сероводорода</p>
+          </div>
+        </CSSTransition>
       </div>
-      <div className="image-container">
-        <img src="https://spaceaqua.ru/upload/medialibrary/6eb/sgc7obfse0ku87jp256gak6lmb2an6is.png" alt="Water Filtration System" />
-        <div
-          className={`plus-icon plus-icon-1 ${showInfo === 1 ? 'active' : ''}`}
-          onClick={() => handleIconClick(1)}
+      
+      <div
+        className={`plus-icon plus-icon-2 ${showInfo === 2 ? 'active' : ''}`}
+        onClick={() => handleIconClick(2)}
+      >
+        <Avatar size={32} icon={<PlusOutlined />} />
+        <CSSTransition
+          in={showInfo === 2}
+          timeout={2000}
+          classNames="info-popup"
+          unmountOnExit
         >
-       <Avatar size={32} icon={<PlusOutlined />} />
-          <CSSTransition
-            in={showInfo === 1}
-            timeout={10000}
-            classNames="info-popup"
-            unmountOnExit
-          >
-            <div className="info-popup" onMouseDown={closeInfoPopup}>
-              <h3>Заголовок 1</h3>
-              <p>Текст для иконки 1</p>
-            </div>
-          </CSSTransition>
-        </div>
-        <div
-          className={`plus-icon plus-icon-2 ${showInfo === 2 ? 'active' : ''}`}
-          onClick={() => handleIconClick(2)}
+          <div className="info-popup" onMouseDown={closeInfoPopup}>
+            <h3>Система обезжелезивания</h3>
+            <p>Очищает от железа</p>
+          </div>
+        </CSSTransition>
+      </div>
+      
+      <div
+        className={`plus-icon plus-icon-3 ${showInfo === 3 ? 'active' : ''}`}
+        onClick={() => handleIconClick(3)}
+      >
+        <Avatar size={32} icon={<PlusOutlined />} />
+        <CSSTransition
+          in={showInfo === 3}
+          timeout={2000}
+          classNames="info-popup"
+          unmountOnExit
         >
-          <Avatar size={32} icon={<PlusOutlined />} />
-          <CSSTransition
-            in={showInfo === 2}
-            timeout={10000}
-            classNames="info-popup"
-            unmountOnExit
-          >
-            <div className="info-popup" onMouseDown={closeInfoPopup}>
-              <h3>Заголовок 2</h3>
-              <p>Текст для иконки 2</p>
-            </div>
-          </CSSTransition>
-        </div>
-        <div
-          className={`plus-icon plus-icon-3 ${showInfo === 3 ? 'active' : ''}`}
-          onClick={() => handleIconClick(3)}
-        >
-          <Avatar size={32} icon={<PlusOutlined />} />
-          <CSSTransition
-            in={showInfo === 3}
-            timeout={10000}
-            classNames="info-popup"
-            unmountOnExit
-          >
-            <div className="info-popup" onMouseDown={closeInfoPopup}>
-              <h3>Заголовок 3</h3>
-              <p>Текст для иконки 3</p>
-            </div>
-          </CSSTransition>
-        </div>
+          <div className="info-popup" onMouseDown={closeInfoPopup}>
+            <h3>Система ProMix</h3>
+            <p>Очищает от марганца, органических веществ, аммония, жёсткости и железа</p>
+          </div>
+        </CSSTransition>
       </div>
     </div>
-  );
+  </div>
+);
 };
 
 export default WaterFiltrationSystem;
