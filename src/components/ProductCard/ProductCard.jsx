@@ -1,41 +1,55 @@
 import React, { useState } from 'react';
 import './ProductCard.css';
 
-const ProductCard = () => {
-  const [isHovered, setIsHovered] = useState(false);
+const ProductImage = ({ imageUrl, altText }) => (
+  <div className="product-image">
+    <img src={imageUrl} alt={altText} />
+  </div>
+);
 
-  const handleMouseEnter = () => {
-    setIsHovered(true);
+const ProductCard = ({ product }) => {
+  const [isChecked, setIsChecked] = useState(true);
+  const [isFavorite, setIsFavorite] = useState(false);
+
+  const handleCheckboxChange = () => {
+    setIsChecked(!isChecked);
   };
 
-  const handleMouseLeave = () => {
-    setIsHovered(false);
+  const handleFavoriteClick = () => {
+    setIsFavorite(!isFavorite);
+  };
+
+  const handleAddToCartClick = () => {
+    console.log('Added to cart:', product.title);
   };
 
   return (
-    <div
-      className={`product ${isHovered ? 'product--hovered' : ''}`}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-    >
-      <div className="product-image">
-      <div class="gradient-background">
-        <img src="https://spaceaqua.ru/upload/resize_webp/iblock/d39/253_253_140cd750bba9870f18aada2478b24840a/ige1u96u2tvmcgi6qqf6cfry2rl9hg38.webp" alt="Oxidizer SCA19 SpaceAqua" />
-        </div>
-        </div>
-        <div className="label new">Новинка</div>
-        <div className={`product-image-overlay ${isHovered ? 'product-image-overlay--active' : ''}`} />
-      <div className={`product-info ${isHovered ? 'product-info--hovered' : ''}`}>
-        <h3 className="product-title">Oxidizer SCA19 SpaceAqua</h3>
-        <p className="price">72 394 Р</p>
-        <p className="availability">В наличии</p>
+    <div className="product">
+      <ProductImage imageUrl={product.imageUrl} altText={product.altText} />
+      <div className="product-info">
+        <h3 className="product-title">{product.title}</h3>
+        <p className="price">{product.price} Р</p>
+        <label>
+          <input
+            type="checkbox"
+            checked={isChecked}
+            onChange={handleCheckboxChange}
+          />
+          В наличии
+        </label>
         <div className="product-actions">
-          <button className="button add-to-cart">В корзину</button>
-          <button className="button favorite">❤</button>
-          <button className="button compare">🔄</button>
+          <button
+            className={`button favorite ${isFavorite ? 'active' : ''}`}
+            onClick={handleFavoriteClick}
+          >
+            ❤
+          </button>
+          <button className="button add-to-cart" onClick={handleAddToCartClick}>
+            🛒
+          </button>
         </div>
-      </div>    
-</div>
+      </div>
+    </div>
   );
 };
 
