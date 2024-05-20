@@ -1,19 +1,25 @@
 .product {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
+  flex: 0 0 auto;
+  width: 200px;
+  padding: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
 
 .product-image {
   width: 100%;
-  height: auto;
+  height: 200px; /* Задаем фиксированную высоту для контейнера с картинкой */
   margin-bottom: 1rem;
+  overflow: hidden; /* Скрываем часть картинки, выходящую за пределы контейнера */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .product-image img {
-  width: 100%;
-  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain; /* Изменяем значение на "contain" */
 }
 
 .product-title {
@@ -31,6 +37,14 @@
   justify-content: center;
   gap: 1rem;
   margin-top: 1rem;
+}
+
+.product-cards-container {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  gap: 1rem;
+  padding: 1rem;
 }
 
 .button {
