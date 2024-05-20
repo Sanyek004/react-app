@@ -43,3 +43,15 @@
 .favorite.active {
   color: red;
 }
+
+.availability {
+  font-weight: bold;
+}
+
+.in-stock {
+  color: green;
+}
+
+.out-of-stock {
+  color: red;
+}

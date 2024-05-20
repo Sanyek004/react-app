@@ -137,14 +137,14 @@ ReactDOM.createRoot(document.getElementById("root8")).render(
   <React.StrictMode>
     <Provider store={store}>
     <ProductCard
-  product={{
-    imageUrl: 'https://spaceaqua.ru/upload/resize_webp/iblock/d39/253_253_140cd750bba9870f18aada2478b24840a/ige1u96u2tvmcgi6qqf6cfry2rl9hg38.webp',
-    altText: 'Oxidizer SCA19 SpaceAqua',
-    title: 'Oxidizer SCA19 SpaceAqua',
-    price: '99 999',
-    availability: 'В наличии',
-  }}
-/>
+        product={{
+          imageUrl: 'https://spaceaqua.ru/upload/resize_webp/iblock/d39/253_253_140cd750bba9870f18aada2478b24840a/ige1u96u2tvmcgi6qqf6cfry2rl9hg38.webp',
+          altText: 'Oxidizer SCA19 SpaceAqua',
+          title: 'Oxidizer SCA19 SpaceAqua',
+          price: '99 999',
+          available: true, // Флаг наличия товара
+        }}
+      />
     </Provider>
   </React.StrictMode>
 );

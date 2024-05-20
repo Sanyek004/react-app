@@ -8,12 +8,7 @@ const ProductImage = ({ imageUrl, altText }) => (
 );
 
 const ProductCard = ({ product }) => {
-  const [isChecked, setIsChecked] = useState(true);
   const [isFavorite, setIsFavorite] = useState(false);
-
-  const handleCheckboxChange = () => {
-    setIsChecked(!isChecked);
-  };
 
   const handleFavoriteClick = () => {
     setIsFavorite(!isFavorite);
@@ -29,14 +24,9 @@ const ProductCard = ({ product }) => {
       <div className="product-info">
         <h3 className="product-title">{product.title}</h3>
         <p className="price">{product.price} Р</p>
-        <label>
-          <input
-            type="checkbox"
-            checked={isChecked}
-            onChange={handleCheckboxChange}
-          />
-          В наличии
-        </label>
+        <p className={`availability ${product.available ? 'in-stock' : 'out-of-stock'}`}>
+          {product.available ? 'В наличии' : 'Нет в наличии'}
+        </p>
         <div className="product-actions">
           <button
             className={`button favorite ${isFavorite ? 'active' : ''}`}
