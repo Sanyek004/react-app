@@ -1,6 +1,6 @@
 .product {
   flex: 0 0 auto;
-  width: 200px;
+  width: 300px; /* Измените значение на нужную вам ширину */
   padding: 1rem;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -37,14 +37,6 @@
   justify-content: center;
   gap: 1rem;
   margin-top: 1rem;
-}
-
-.product-cards-container {
-  display: flex;
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  gap: 1rem;
-  padding: 1rem;
 }
 
 .button {
@@ -92,4 +84,12 @@
 .ant-carousel .slick-dots li.slick-active button {
   background-color: #007aff;
   border-color: #007aff;
+}
+
+.ant-carousel .slick-slide {
+  text-align: center;
+}
+
+.ant-carousel .slick-slide > div {
+  display: inline-block;
 }

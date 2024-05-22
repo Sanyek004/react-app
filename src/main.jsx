@@ -153,7 +153,13 @@ ReactDOM.createRoot(document.getElementById("root8")).render(
             price: '296 280',
             available: true,
           },
-          
+          {
+            imageUrl: 'https://spaceaqua.ru/upload/resize_webp/iblock/268/253_253_140cd750bba9870f18aada2478b24840a/y190ii0p3hgzzi16ag0tmp37bhbdj2k2.webp',
+            altText: 'SpaceAqua NKX 1000 SCA19 F',
+            title: 'SpaceAqua NKX 1000 SCA19 F',
+            price: '175 202',
+            available: true,
+          },
         ]}
       />
     </Provider>

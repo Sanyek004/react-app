@@ -48,7 +48,7 @@ const ProductSlider = ({ products }) => {
   return (
     <Carousel dots>
       {products.map((product, index) => (
-        <div key={index}>
+        <div key={index} style={{ display: 'flex', justifyContent: 'center' }}>
           <ProductCard product={product} />
         </div>
       ))}
