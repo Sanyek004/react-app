@@ -4,6 +4,7 @@
   padding: 1rem;
   border: 1px solid #ccc;
   border-radius: 4px;
+  cursor: pointer;
 }
 
 .product-image {
@@ -25,6 +26,10 @@
 .product-title {
   font-size: 1.2rem;
   margin-bottom: 0.5rem;
+}
+
+.product:active {
+  cursor: grabbing; /* Изменяем курсор на руку, когда начинается перетаскивание */
 }
 
 .price {
