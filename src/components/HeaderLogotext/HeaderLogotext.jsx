@@ -4,13 +4,13 @@ const App = () => {
   return (
     <div style={{ display: 'flex' }}>
       <img
-        src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/1%D0%BA%D0%B0%D0%BD%D0%B0%D0%BB-5.svg/512px-1%D0%BA%D0%B0%D0%BD%D0%B0%D0%BB-5.svg.png" // замените на ссылку на вашу картинку
-        alt="First Channel"
+        src="https://spaceaqua.ru/upload/medialibrary/214/xs2easvl7p9jh8ogss4h1jmo1sucwus8r.png.pagespeed.ic.fkcCbP21BJ.png" 
+        alt="Go Screen"
         style={{ width: 500, height: 500 }}
       />
       <div style={{ marginLeft: 20 }}>
-        <h1>Первый Канал</h1>
-        <p>Первый пошёл АХАХАХАХАХХАХАХАХАХ.</p>
+        <h1>Экологическое движение SpaceAqua Go Green</h1>
+        <p>Сейчас, когда проблемы экологии стоят очень остро, мы объединяемся со всеми небезразличными людьми, чтобы сохранить наш мир — мир зелёных деревьев, синего неба и чистой воды! Покупая наши продукты, вы не только обеспечиваете себя качественной водой с превосходным вкусом, но и помогаете экологии, сокращая использование одноразового пластика.</p>
       </div>
     </div>
   );
