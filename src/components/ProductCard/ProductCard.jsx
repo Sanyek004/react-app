@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Carousel } from 'antd';
 import './ProductCard.css';
 
 const ProductImage = ({ imageUrl, altText }) => (
@@ -43,4 +44,16 @@ const ProductCard = ({ product }) => {
   );
 };
 
-export default ProductCard;
+const ProductSlider = ({ products }) => {
+  return (
+    <Carousel dots>
+      {products.map((product, index) => (
+        <div key={index}>
+          <ProductCard product={product} />
+        </div>
+      ))}
+    </Carousel>
+  );
+};
+
+export default ProductSlider;

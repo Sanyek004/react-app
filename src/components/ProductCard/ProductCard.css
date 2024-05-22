@@ -8,9 +8,9 @@
 
 .product-image {
   width: 100%;
-  height: 200px; /* Задаем фиксированную высоту для контейнера с картинкой */
+  height: 200px;
   margin-bottom: 1rem;
-  overflow: hidden; /* Скрываем часть картинки, выходящую за пределы контейнера */
+  overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -19,7 +19,7 @@
 .product-image img {
   max-width: 100%;
   max-height: 100%;
-  object-fit: contain; /* Изменяем значение на "contain" */
+  object-fit: contain;
 }
 
 .product-title {
@@ -68,4 +68,28 @@
 
 .out-of-stock {
   color: red;
+}
+
+.ant-carousel .slick-dots {
+  bottom: -30px;
+}
+
+.ant-carousel .slick-dots li {
+  width: 12px;
+  height: 12px;
+  margin: 0 4px;
+}
+
+.ant-carousel .slick-dots li button {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  transition: background-color 0.3s;
+}
+
+.ant-carousel .slick-dots li.slick-active button {
+  background-color: #007aff;
+  border-color: #007aff;
 }
