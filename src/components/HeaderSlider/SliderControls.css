@@ -1,0 +1,28 @@
+.slider-controls {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .slider-controls__button {
+    width: 40px;
+    height: 40px;
+    border: none;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain; /* Добавляем это свойство */
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+  
+  .slider-controls__button--prev {
+    background-image: url('./icons/prev.png'); /* Исправляем путь к файлу */
+    margin-right: 10px;
+  }
+  
+  .slider-controls__button--next {
+    background-image: url('./icons/next.png'); /* Исправляем путь к файлу */
+  }
+  

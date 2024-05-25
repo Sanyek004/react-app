@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import { Spin } from 'antd';
+import { CSSTransition } from 'react-transition-group';
+import SliderControls from './SliderControls';
+import './HeaderSlider.css';
 
 const slides = [
   {
@@ -28,13 +31,22 @@ const slides = [
 const HeaderSlider = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [videoLoaded, setVideoLoaded] = useState(false);
+  const [isAnimating, setIsAnimating] = useState(false);
 
   const handlePrevClick = () => {
-    setCurrentIndex((currentIndex - 1 + slides.length) % slides.length);
+    handleSlideChange(currentIndex - 1);
   };
 
   const handleNextClick = () => {
-    setCurrentIndex((currentIndex + 1) % slides.length);
+    handleSlideChange(currentIndex + 1);
+  };
+
+  const handleSlideChange = (newIndex) => {
+    setIsAnimating(true);
+    setTimeout(() => {
+      setCurrentIndex((newIndex + slides.length) % slides.length);
+      setIsAnimating(false);
+    }, 500);
   };
 
   const handleVideoLoad = () => {
@@ -42,37 +54,63 @@ const HeaderSlider = () => {
   };
 
   return (
-    <div style={{ display: 'flex', margin: '20px' }}>
-      <div style={{ flex: 1, marginRight: '20px' }}>
-        <h2>{slides[currentIndex].title}</h2>
-        <p>{slides[currentIndex].description}</p>
-        <div>
-          <a href={slides[currentIndex].detailsUrl}>Подробнее</a>
-        </div>
-        <div>
-          <button onClick={handlePrevClick}>Previous</button>
-          <button onClick={handleNextClick}>Next</button>
+    <div className="header-slider">
+      <div className="header-slider__content">
+        <CSSTransition
+          in={!isAnimating}
+          timeout={500}
+          classNames="slide"
+          unmountOnExit
+        >
+          <div className="header-slider__text">
+            <h2>{slides[currentIndex].title}</h2>
+            <p>{slides[currentIndex].description}</p>
+            <div>
+              <a href={slides[currentIndex].detailsUrl} className="header-slider__button">Подробнее об итогах выставки</a>
+            </div>
+          </div>
+        </CSSTransition>
+        <div className="header-slider__controls">
+          <SliderControls 
+            onPrevClick={handlePrevClick} 
+            onNextClick={handleNextClick} 
+            currentIndex={currentIndex} 
+            totalSlides={slides.length} 
+          />
         </div>
       </div>
-      <div style={{ width: '400px', height: '225px', position: 'relative' }}>
-        {slides[currentIndex].mediaType === 'image' ? (
-          <img src={slides[currentIndex].mediaUrl} alt="Slide" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
-        ) : (
-          <>
-            {!videoLoaded && (
-              <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }}>
-                <Spin />
-              </div>
+      <div className="header-slider__media">
+        <CSSTransition
+          in={!isAnimating}
+          timeout={500}
+          classNames="slide"
+          unmountOnExit
+        >
+          <div>
+            {slides[currentIndex].mediaType === 'image' ? (
+              <img
+                src={slides[currentIndex].mediaUrl}
+                alt="Slide"
+                className="header-slider__media-item"
+              />
+            ) : (
+              <>
+                {!videoLoaded && (
+                  <div className="header-slider__spinner">
+                    <Spin />
+                  </div>
+                )}
+                <video
+                  src={slides[currentIndex].mediaUrl}
+                  onLoadedData={handleVideoLoad}
+                  loop
+                  autoPlay
+                  className="header-slider__media-item"
+                />
+              </>
             )}
-            <video
-              src={slides[currentIndex].mediaUrl}
-              onLoadedData={handleVideoLoad}
-              loop
-              autoPlay
-              style={{ width: '100%', height: '100%', objectFit: 'contain', display: videoLoaded ? 'block' : 'none' }}
-            />
-          </>
-        )}
+          </div>
+        </CSSTransition>
       </div>
     </div>
   );
