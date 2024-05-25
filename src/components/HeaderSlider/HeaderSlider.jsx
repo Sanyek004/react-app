@@ -74,7 +74,7 @@ const HeaderSlider = () => {
           <SliderControls 
             onPrevClick={handlePrevClick} 
             onNextClick={handleNextClick} 
-            currentIndex={currentIndex} 
+            currentSlide={currentIndex}  // Corrected prop name
             totalSlides={slides.length} 
           />
         </div>
