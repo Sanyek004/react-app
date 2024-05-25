@@ -6,7 +6,7 @@ import './HeaderSlider.css';
 
 const slides = [
   {
-    title: 'Выставка AquaTherm Moscrow 2024',
+    title: 'Выставка AquaTherm Moscow 2024',
     description: 'В феврале прошла международная выставка AquaTher, Moscow 2024, на которой было представлено оборудование бренда SpaceAqua',
     mediaUrl: 'https://spaceaqua.ru/upload/iblock/bc4/wrmuzunpfxk0vmbrfinj0iljh0suzepb.mp4',
     mediaType: 'video',
