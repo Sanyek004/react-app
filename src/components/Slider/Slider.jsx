@@ -58,6 +58,7 @@ const Slider = () => {
 
   return (
     <div className="slider">
+      <h2 className="catalog-title">Каталог</h2>
       <div className="slide-container" style={{ transform: `translateX(-${currentSlide * 100}%)` }}>
         {slides.map((slideSet, index) => (
           <div className="slide" key={index}>
