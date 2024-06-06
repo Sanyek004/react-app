@@ -35,7 +35,7 @@
     <section class="partnership-section">
       <div id="root6"></div>
     </section>
-    <section class="about-company-section">
+    <section id="about-company" class="about-company-section">
       <div id="root7"></div>
     </section>
     <div id="root2"></div>
@@ -51,7 +51,7 @@
     <div class="footer-section">
       <h3>Компания</h3>
       <ul>
-        <li><a href="#">О компании</a></li>
+        <li><a href="#about-company">О компании</a></li>
         <li><a href="#">Go Green — Забота об экологии</a></li>
         <li><a href="#">Подобрать фильтр</a></li>
         <li><a href="#">Публикации</a></li>
@@ -87,5 +87,15 @@
   </footer>
 
   <script type="module" src="/src/main.jsx"></script>
+  <script>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+  </script>  
 </body>
 </html>
