@@ -46,13 +46,16 @@ const ProductCard = ({ product }) => {
 
 const ProductSlider = ({ products }) => {
   return (
-    <Carousel dots draggable swipeToSlide>
-      {products.map((product, index) => (
-        <div key={index} style={{ display: 'flex', justifyContent: 'center' }}>
-          <ProductCard product={product} />
-        </div>
-      ))}
-    </Carousel>
+    <div className="slider">
+      <h2 className="catalog-title">Рекомендуем</h2>
+      <Carousel dots draggable swipeToSlide slidesToShow={3}>
+        {products.map((product, index) => (
+          <div key={index} style={{ display: 'flex', justifyContent: 'center' }}>
+            <ProductCard product={product} />
+          </div>
+        ))}
+      </Carousel>
+    </div>
   );
 };
 

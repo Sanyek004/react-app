@@ -160,6 +160,27 @@ ReactDOM.createRoot(document.getElementById("root8")).render(
             price: '175 202',
             available: true,
           },
+          {
+            imageUrl: 'https://spaceaqua.ru/upload/resize_webp/iblock/e7b/253_253_140cd750bba9870f18aada2478b24840a/pgw2h1ui1ydx51gzqploa35hqqo0csdv.webp',
+            altText: 'SpaceAqua NK 2000OD SCA19',
+            title: 'SpaceAqua NK 2000OD SCA19',
+            price: '252 917',
+            available: true,
+          },
+          {
+            imageUrl: 'https://spaceaqua.ru/upload/resize_webp/iblock/908/253_253_140cd750bba9870f18aada2478b24840a/1pfhf5m1dxh4h4y5trluoumtetiwqbjn.webp',
+            altText: 'SpaceAqua NK 2000OD SCA19',
+            title: 'SpaceAqua NK 2000OD SCA19',
+            price: '250 959',
+            available: true,
+          },
+          {
+            imageUrl: 'https://spaceaqua.ru/upload/resize_webp/iblock/6fe/253_253_140cd750bba9870f18aada2478b24840a/97m0pjvzdaivzcrwoodt5na48acc0rd2.webp',
+            altText: 'SpaceAqua NK 2000OD SCA19',
+            title: 'SpaceAqua NK 2000OD SCA19',
+            price: '234 647',
+            available: true,
+          },
         ]}
       />
     </Provider>
