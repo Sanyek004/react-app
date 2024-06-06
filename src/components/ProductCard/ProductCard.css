@@ -1,6 +1,5 @@
 .product {
-  flex: 0 0 auto;
-  width: 320px;
+  width: 100%; /* Изменение ширины на 100% */
   padding: 1rem;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -30,6 +29,76 @@
 
 .product:active {
   cursor: grabbing; /* Изменяем курсор на руку, когда начинается перетаскивание */
+}
+
+.slider {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+}
+
+.slider .ant-slider {
+  padding: 20px 0;
+}
+
+.slider .ant-slider-slide {
+  padding: 0 10px;
+}
+
+/* Стили для карточки продукта */
+.product.card {
+  width: calc(100% - 150px);
+  max-width: none;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin: 0 auto;
+}
+
+.product-image {
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.product-image img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.product-info {
+  padding: 10px;
+}
+
+.product-title {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.price {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.availability {
+  margin-bottom: 10px;
+}
+
+.availability.in-stock {
+  color: green;
+}
+
+.availability.out-of-stock {
+  color: red;
+}
+
+.product-actions {
+  display: flex;
+  justify-content: space-between;
 }
 
 .price {
@@ -99,13 +168,14 @@
 
 .ant-carousel .slick-slide {
   text-align: center;
-  margin: 0 10px; 
+  margin: 0 10px;
 }
 
-.ant-carousel .slick-slide > div {
+/* .ant-carousel .slick-slide > div {
+  
   display: inline-block;
   padding: 0 10px;
-}
+} */
 
 .ant-carousel .slick-slider {
   overflow: visible;
@@ -113,6 +183,7 @@
 
 .ant-carousel .slick-list {
   overflow: visible;
+  margin: 0 -10px;
 }
 
 .ant-carousel .slick-slide.slick-active {

@@ -20,9 +20,9 @@ const ProductCard = ({ product }) => {
   };
 
   return (
-    <div className="product">
+    <div className="product card">
       <ProductImage imageUrl={product.imageUrl} altText={product.altText} />
-      <div className="product-info">
+      <div className="product-info card-content">
         <h3 className="product-title">{product.title}</h3>
         <p className="price">{product.price} Р</p>
         <p className={`availability ${product.available ? 'in-stock' : 'out-of-stock'}`}>
