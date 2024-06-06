@@ -25,6 +25,8 @@ import About from "./components/About/About";
 import ProductCard from "./components/ProductCard/ProductCard";
 import WaterFiltrationSystem from "./components/WaterFiltrationSystem/WaterFiltrationSystem";
 import ProductSlider from "./components/ProductCard/ProductCard";
+import Header from "./components/Header/Header";
+import ContactInfo from "./components/Header/ContactInfo";
 
 
 const store = configureStore({
@@ -76,7 +78,13 @@ export default function Todo2() {
 }
 */
 
-
+ReactDOM.createRoot(document.getElementById("root0")).render(
+  <React.StrictMode>
+    <Provider store={store}>
+      <Header />
+    </Provider>
+  </React.StrictMode>
+);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>

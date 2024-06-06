@@ -1,0 +1,22 @@
+.contact-info.transparent {
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    margin-left: auto;
+}
+
+.call-button.white-text {
+    background-color: transparent;
+    border: 1px solid white;
+    color: white;
+    padding: 8px 16px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+.contacts a.white-text {
+    text-decoration: none;
+    color: white;
+    margin-bottom: 5px;
+}
