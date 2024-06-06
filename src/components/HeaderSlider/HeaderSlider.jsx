@@ -131,6 +131,7 @@ const HeaderSlider = () => {
                   onLoadedData={handleVideoLoad}
                   loop
                   autoPlay
+                  muted
                   className="header-slider__media-item"
                   onClick={handleVideoClick}
                 />

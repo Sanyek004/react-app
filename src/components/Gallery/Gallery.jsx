@@ -2,34 +2,34 @@ import React, { useState } from 'react';
 import CSSTransition from 'react-transition-group/CSSTransition';
 import './ImageWithDescription.css';
 
-const gifs = [
-  {
-    url: 'https://c.tenor.com/EgkXGTk5iw4AAAAd/tenor.gif',
-    title: 'Title 1',
-    description: 'Description 1'
-  },
-  {
-    url: 'https://c.tenor.com/ikwivN9cyroAAAAd/tenor.gif',
-    title: 'Title 2',
-    description: 'Description 2'
-  },
-  {
-    url: 'https://c.tenor.com/P4aQ7gPsYvgAAAAd/tenor.gif',
-    title: 'Title 3',
-    description: 'Description 3'
-  }
-];
+// const gifs = [
+//   {
+//     url: 'https://c.tenor.com/EgkXGTk5iw4AAAAd/tenor.gif',
+//     title: 'Title 1',
+//     description: 'Description 1'
+//   },
+//   {
+//     url: 'https://c.tenor.com/ikwivN9cyroAAAAd/tenor.gif',
+//     title: 'Title 2',
+//     description: 'Description 2'
+//   },
+//   {
+//     url: 'https://c.tenor.com/P4aQ7gPsYvgAAAAd/tenor.gif',
+//     title: 'Title 3',
+//     description: 'Description 3'
+//   }
+// ];
 
 const ImageWithDescription = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const handlePrevClick = () => {
-    setCurrentIndex((currentIndex - 1 + gifs.length) % gifs.length);
-  };
+  // const handlePrevClick = () => {
+  //   setCurrentIndex((currentIndex - 1 + gifs.length) % gifs.length);
+  // };
 
-  const handleNextClick = () => {
-    setCurrentIndex((currentIndex + 1) % gifs.length);
-  };
+  // const handleNextClick = () => {
+  //   setCurrentIndex((currentIndex + 1) % gifs.length);
+  // };
 
   const getImageStyle = (index) => {
     const translateX = -100 * (index - currentIndex);
