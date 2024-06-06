@@ -1,22 +1,68 @@
 .contact-info.transparent {
     display: flex;
-    align-items: center;
+    justify-content: flex-end;
     background-color: transparent;
     margin-left: auto;
-}
-
-.call-button.white-text {
+  }
+  
+  .call-button.white-text {
     background-color: transparent;
     border: 1px solid white;
     color: white;
     padding: 8px 16px;
     font-size: 16px;
     cursor: pointer;
-    margin-right: 20px;
-}
-
-.contacts a.white-text {
-    text-decoration: none;
-    color: white;
+  }
+  
+  .modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    outline: none;
+  }
+  
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  form div {
+    margin-bottom: 15px;
+  }
+  
+  form label {
     margin-bottom: 5px;
-}
+  }
+  
+  form input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    width: 100%;
+  }
+  
+  .call-button {
+    background-color: #007bff;
+    color: white;
+    padding: 8px 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+  
+  p {
+    margin-top: 20px;
+  }
